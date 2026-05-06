@@ -30,11 +30,23 @@
             <div class="meta">
                 <section id="clock">
                     <div class="timer">00:00:00</div>
+                     <!-- inside meta -->
+                    <section class="stats">
+                        <p>WPM: <span id="wpm">0</span></p>
+                        <p>Errors: <span id="errors">0</span></p>
+                    </section>
+
+                     <section class="high-scores">
+                        <h3>Top 3 Fastest Scores</h3>
+                        <ol id="score-list">
+                        <!-- High scores will be injected here -->
+                        </ol>
+                    </section>
                 </section>
 
                 <button id="reset">Start over</button>
-            </div><!-- .meta -->
-        </section><!-- .test-area -->
+            </div>
+        </section>
     </main>
 
 </body>
