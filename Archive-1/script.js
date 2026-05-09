@@ -20,7 +20,7 @@ const phrases = [
     "JavaScript allows for dynamic and interactive user experiences.",
     "Numerical methods provide approximations for complex math.",
     "Consistency is the key to mastering any new programming skill.",
-    "Don't litter the plant, RESYCLE!"
+    "Don't litter the planet, RESYCLE!"
 
 ];
 
@@ -86,15 +86,15 @@ function start() {
     // Timer Precision: Only start if text area is empty and no timer is running
     if (textEnterLength === 0 && !timerRunning) { 
         timerRunning = true; //Lock the timer so another one cannot start
-        interval = setInterval(runTimer, 10);
+        interval = setInterval(runTimer, 10);//start the heartbeat
     }
 }
 // Reset everything:
 function reset() {
-    // Clear the technical state
+    //  Stop the actual background process
     clearInterval(interval);
 
-    //ready for a new setInterval later
+    //Wipe the variable & ready for a new setInterval later
     interval = null;
     timer = [0, 0, 0, 0];
 
@@ -111,6 +111,8 @@ function reset() {
     if (wpmDisplay) wpmDisplay.innerHTML = "0";
     if (errorDisplay) errorDisplay.innerHTML = "0";
 
+    displayScores();
+    
     // Duplicate Prevention Logic
     let currentPhrase = originText.innerHTML;
     let nextPhrase = currentPhrase;
@@ -124,9 +126,10 @@ function reset() {
     originText.innerHTML = nextPhrase; 
 }
 
-// Event listeners for keyboard input and the reset button:
+// Event listeners for keyboard input:
 testArea.addEventListener("keypress", start, false);
 testArea.addEventListener("keyup", spellCheck, false);
+//The reset button:
 resetButton.addEventListener("click", reset, false);
 
 // Function to pick a phrase on initial load
